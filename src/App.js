@@ -1,26 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './Components/Header/Header';
+import Header from './Components/Header/Header';
+import List from './Components/List/List';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Liste des courses</h1>
-      </header>
-    <div className="input">
-      
-        <input type="text" placeholder="un achat"/>
-      <button>+</button>
-    </div>
-    <div className="items-list">
-      <ul>
-        <li>lait</li>
-        <li>cereales</li>
-        
-      </ul>
-    </div>
-
+      <Header/>
+      <List/>
     </div>
   );
 }
