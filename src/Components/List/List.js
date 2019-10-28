@@ -11,10 +11,11 @@ class List extends React.Component {
       input:""
 		}
 	}
-	addItem(){
+	addItem = (event) =>{
+    event.preventDefault()
 		this.state.items.push({name:this.state.input});
 		const newItems = this.state.items;
-		this.setState({ items: newItems });
+		this.setState({ items: newItems, input:"" });
   }
   onTextChange = (event)=>{
     const value = event.target.value;
@@ -24,10 +25,11 @@ class List extends React.Component {
 	render () {
 		return (
 			<div>
-				<div className="input">
+				<form onSubmit={this.addItem} className="input">
+
 					<input type="text" value={this.state.input} onChange={this.onTextChange} placeholder="un achat"/>
-					<button onClick={() => this.addItem()}>+</button>
-				</div>
+					<button type="submit">+</button>
+				</form>
 				<div className="items-list">
 					<ul>
 						{this.state.items.map((value, index) => {
