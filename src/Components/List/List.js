@@ -5,9 +5,7 @@ class List extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			items:[
-        {name:"lait ribo"}
-      ],
+			items:[],
       input:""
 		}
 	}
